@@ -1,0 +1,4 @@
+/*EVENTO 921*/
+IF(&E1921 > 0,((IF(&E1921 + &E505 + FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','1902') > FTF(1,3,&E1921 + &E505 + FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','1902'),&REFERE,QueFuncionario.TIPTAB), FTF(1,3,&E1921 + &E505 + FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','1902') ,&REFERE,QueFuncionario.TIPTAB), &E1921 + &E505 + FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','1902'))* FTF(1,1,&E1921 + &E505 + FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','1902'),&REFERE,QueFuncionario.TIPTAB)/100)) - (&E506 + ABS(FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','902'))), 0)
+/*INDICE*/
+FTF(1,1,&E1921+ &E505 + FBE(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&Refere,'F,1,2,3','1902'),&REFERE,QueFuncionario.TIPTAB)
