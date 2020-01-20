@@ -1,0 +1,13 @@
+/*EVENTO 11 PERICULOSIDADE*/
+IF(&Calculo = 'S',
+((((QueFuncionario.SALBASE * 
+IF(QueFuncionario.TIPSAL=5,QueFuncionario.HORASSEM*5,1) * 
+QueFuncionario.PERCPERIC)/100)/30) * 
+(&DIASTRA - (FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','102,104,107','I') - 
+FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','105','I')))),(QueFuncionario.SALBASE * 
+IF(QueFuncionario.TIPSAL=5,QueFuncionario.HORASSEM*5,1) * 
+(QueFuncionario.PERCPERIC/100)))
+
+/*INDICE*/
+(&DIASTRA-(FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','102,104,107','I')-
+FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','105','I')))
