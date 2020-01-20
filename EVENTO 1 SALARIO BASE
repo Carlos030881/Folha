@@ -1,0 +1,7 @@
+/*EVENTO 1 - Salario Base*/
+IF((&Tipfol ='N') And (QueFuncionario.TIPSAL <> 5) 
+And (fTemNaLista(formatnumeric('00',QueFuncionario.VINCULO),'02,30,55,80,90,99') = 'N'),
+((QueFuncionario.SALBASE / &DiaDivSalBase) * &DIASTRA), 0)
+
+/*INDICE*/
+&DIASTRA
