@@ -1,0 +1,26 @@
+/*EVENTO 7 SALARIO FAMILIA*/
+IF((&Folqui <> 1),
+IF((((QueFuncionario.SITUACAO = 1) 
+AND (CTOI(PDESPARAM('1', 'TFPOCO O, TFPHIS H', ' O.CODHISTOCOR = H.CODHISTOCOR AND O.CODEMP = :INT_CODEMP 
+AND O.CODFUNC = :INT_CODFUNC 
+AND O.DTFINALOCOR >= :DAT_DTINI 
+AND O.DTFINALOCOR <= :DAT_DTFIM 
+AND H.AFASTAMENTO IN ('A', 'D') 
+AND O.DTFINALOCOR IS NOT NULL',STR(queFuncionario.CODEMP), STR(queFuncionario.CODFUNC), DTOC(&REFERE * 1.0), DTOC((FSOMAMES(&REFERE, 1) - 1) * 1.0))) <> 1)) 
+OR (QueFuncionario.SITUACAO = 5)) 
+OR (((QueFuncionario.SITUACAO = 3) 
+OR (QueFuncionario.SITUACAO = 6)) 
+AND ((&DIASTRA + &F5020) > 0)),FQD(queFuncionario.codemp,queFuncionario.codfunc,'S',&Refere) * 
+FTF(3,1,QueFuncionario.SALBASE + &VlrIncideMedias,&Refere,queFuncionario.TIPTAB),0) / 
+IF(((&TIPFOL = 'N') 
+AND (MES(queFuncionario.DTADM) = &MESATU) 
+AND (ANO(queFuncionario.DTADM) = &ANOATU)) 
+OR (&TIPFOL = 'R'), IF(QueFuncionario.TIPSAL = 5,QueFuncionario.HORASSEM * 5,30), 1) * 
+IF(((&TIPFOL = 'N') 
+AND (MES(queFuncionario.DTADM) = &MESATU) 
+AND (ANO(queFuncionario.DTADM) = &ANOATU)) 
+OR (&TIPFOL = 'R'),
+IF(&DIASTRA > 0,&DIASTRA,30), 1),0)  
+
+/*INDICE*/
+FQD(queFuncionario.codemp, queFuncionario.codfunc,'N', &Refere)
