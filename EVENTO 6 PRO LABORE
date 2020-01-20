@@ -1,0 +1,2 @@
+/*EVENTO 6 PRO LABORE*/
+IF((QueFuncionario.VINCULO = 80),(FTF(5,1,&E6,&Refere,QueFuncionario.TIPTAB)),0)
