@@ -1,0 +1,6 @@
+/*EVENTO 3 SALARIO JOVEM APRENDIZ*/
+IF((&Tipfol ='N') And (QueFuncionario.VINCULO = 55),(
+QueFuncionario.SALBASE * QueFuncionario.HORASSEM * (DIA(DTOC((FSOMAMES(&REFERE,1) -1))) / 7) * 7) / 6,0)
+
+/*INDICE*/
+DIA(DTOC((FSOMAMES(&REFERE,1) -1))) / 7
