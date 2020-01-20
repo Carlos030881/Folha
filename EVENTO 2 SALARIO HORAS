@@ -1,0 +1,9 @@
+/*EVENTO 2 SALARIO HORAS*/
+IF((&Tipfol ='N') 
+And (QueFuncionario.TIPSAL = 5)  
+And (QueFuncionario.HORASSEM <> 0) 
+And (fTemNaLista(formatnumeric('00',QueFuncionario.VINCULO),'02,30,55,80,90,99') = 'N'),((QueFuncionario.SALBASE) * 
+(Round(((QueFuncionario.HORASSEM) / 30),2) * &DIASTRA)), 0)
+
+/*INDICE*/
+&DIASTRA
