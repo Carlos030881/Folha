@@ -1,0 +1,12 @@
+/*13 INSALUBRIDADE*/
+IF(&Calculo = 'S',((((FTF(5,1,&E13,&Refere,QueFuncionario.TIPTAB) * 
+QueFuncionario.PERCINSAL)/100) / IF(QueFuncionario.TIPSAL=5,QueFuncionario.HORASSEM*5,30)) * 
+(&DIASTRA - (FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','102,104,107','I') - 
+FDiasAfaMotivo(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'T', &TIPFOL) - 
+FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','105','I')))),((FTF(5,1,&E13,&Refere,QueFuncionario.TIPTAB) * 
+QueFuncionario.PERCINSAL) /100))
+
+/*INDICE*/
+(&DIASTRA - (FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','102,104,107','I') - 
+FDiasAfaMotivo(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'T', &TIPFOL) - 
+FBM(QueFuncionario.CODEMP,QueFuncionario.CODFUNC,&REFERE,'M','105','I')))
