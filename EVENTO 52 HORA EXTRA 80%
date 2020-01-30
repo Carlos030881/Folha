@@ -1,0 +1,9 @@
+/* EVENTO 52 HORA EXTRA 80%*/
+((((QueFuncionario.SALBASE*
+IF(QueFuncionario.TIPSAL=5,(QueFuncionario.HORASSEM * 5),1))+
+&VLRINCORPORA+&REFLEXIVOS) / (QueFuncionario.HORASSEM * 5)) * 
+(Int(queMovimento.INDICE) + (FRAC(queMovimento.INDICE) / 0.6))) * 
+queMovimento.INDICE_EVENTO
+
+/*INDICE*/
+queMovimento.INDICE
