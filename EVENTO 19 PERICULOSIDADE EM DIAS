@@ -1,0 +1,10 @@
+/*19 PERICULOSIDADE EM DIAS*/
+IF(&Calculo = 'S',((((QueFuncionario.SALBASE*
+IF(QueFuncionario.TIPSAL=5,QueFuncionario.HORASSEM*5,1) + 
+&REFLEXIVOS) * queEventos.INDICE) / 30) * 
+queMovimento.INDICE), ((QueFuncionario.SALBASE * 
+IF(QueFuncionario.TIPSAL=5,QueFuncionario.HORASSEM*5,1) * 
+queEventos.INDICE)))
+
+/*INDICE*/
+queEventos.INDICE
