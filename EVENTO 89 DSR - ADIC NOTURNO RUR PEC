@@ -1,0 +1,13 @@
+/*EVENTO 89 DSR - ADIC NOTURNO RUR PEC*/
+IF((&TIPFOL = 'R'),(&E63 / FDiasUteis(&refere * 1.0)) * 
+FDiasNaoUteis(&refere * 1.0),
+IF( &DIASUTEISTRAB > 0,(&E63 / &DIASUTEISTRAB ) * 
+&DIASNAOUTEISTRAB, 0))
+
+/*INDICE*/
+IF(MemSetVar('MinutosDSR',((((int(MemSetVar('IndiceDSR',FBM(queFuncionario.CODEMP, queFuncionario.CODFUNC, &Refere, 'M', '63', 'I'))) * 60) + 
+(FRAC(MemGetVar('IndiceDSR')) * 100)) / 
+IF(&TIPFOL = 'N',&DIASUTEISTRAB,FDiasUteis(&refere * 1.0))) * 
+IF(&TIPFOL = 'N',&DIASNAOUTEISTRAB,FDiasNaoUteis(&refere * 1.0)))) > 59, 
+int(MemGetVar('MinutosDSR') / 60) + ((MemGetVar('MinutosDSR') - 
+(int(MemGetVar('MinutosDSR') / 60) * 60)) / 100), MemGetVar('MinutosDSR') / 100)
