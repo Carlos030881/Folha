@@ -1,0 +1,5 @@
+/*EVENTO 102 FALTAS*/
+(QueFuncionario.SALBASE*IF(QueFuncionario.TIPSAL=5,QueFuncionario.HORASSEM * 5,1)/30)*queMovimento.INDICE
+
+/*INDICE*/
+queMovimento.INDICE
