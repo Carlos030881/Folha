@@ -1,0 +1,12 @@
+/*EVENTO 758 -DESC. PLANO GOLDEN – TITULAR*/
+
+IF(((&TIPFOL = 'R') OR 
+(&TIPFOL = 'N')),
+FTF(10,(CTOI(PDESPARAM('CODFAIXA','TFPPLS','CODEMP = :INT_CODEMP AND CODFUNC =:INT_CODFUNC AND SEQUENCIA = 0 AND TABFAIXA = 10', 
+str(quefuncionario.CODEMP), 
+str(quefuncionario.CODFUNC)))),
+FQtdAnos(CTOD(PDESPARAM('DTNASC','TFPFUN','CODEMP = :INT_CODEMP AND CODFUNC = :INT_CODFUNC',
+str(queFuncionario.CODEMP), 
+str(queFuncionario.CODFUNC))), &Refere),
+&Refere,queFuncionario.TIPTAB)- 
+FTF(10,1,1,&Refere,queFuncionario.TIPTAB),0)
