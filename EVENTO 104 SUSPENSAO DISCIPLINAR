@@ -1,0 +1,5 @@
+/*EVENTO 104 SUSPENSAO DISCIPLINAR*/
+((QueFuncionario.SALBASE / 30) * (queMovimento.INDICE + 0))
+
+/*INDICE*/
+(queMovimento.INDICE + 0)
