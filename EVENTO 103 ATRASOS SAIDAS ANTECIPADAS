@@ -1,0 +1,7 @@
+/*EVENTO 103 ATRASOS SAIDAS ANTECIPADAS*/
+(QueFuncionario.SALBASE/
+IF(QueFuncionario.TIPSAL=5,1,QueFuncionario.HORASSEM*5)*
+(Int(queMovimento.INDICE) + (FRAC(queMovimento.INDICE) / 0.6)))
+
+/*INDICE*/
+queMovimento.INDICE
